@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Level2Learn.com | Roll the Troll</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="trollGame.css">
+        
+    </head>
+    <body>
+        <div id="canvasContainer">
+            <canvas id="gameCanvas" width=600 height=600>
+                <h1>Please update your browser to play this game.</h1>
+            </canvas>
+            <section id="startSection">
+                <button id="startGame" onclick="startGame()">Start Game</button>
+            </section>
+            <div id="actionContainer">
+                <div id="trollContainer">
+                    <div id="trollTxtBox"></div>
+                    <div id="trollName">Troll</div>
+                    <div id="trollHP_Outer">
+                        <div id="trollHP_Inner"></div>
+                    </div>
+                </div>
+                <div id="playerContainer">
+                    <div id="playerTxtBox"></div>
+                    <div id="playerName">Player</div>
+                    <div id="playerHP_Outer">
+                        <div id="playerHP_Inner"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="buttonContainer">
+                <button id="engage" onclick="takeAction('engage')">Engage</button>
+                <button id="undermine" onclick="takeAction('undermine')">Undermine</button>
+                <button id="ignore" onclick="takeAction('ignore')">Ignore</button>
+                <button id="roll_Over" onclick="rollOver()">Roll Over</button>
+            </div>
+
+            <section id="endScreen">
+                <div id="endRoll"></div>
+                <div id="endMessage">You got Rolled<br \><span>by the Troll</span></div>
+                <div id="endButtonContainer">
+                    <button onclick="init()">Play Again</button>
+                    <button onclick="rollCredits()">Roll Credits</button>
+                </div>
+            </section>
+            <section id="credits">
+                Created using vanilla Javascript,
+                HTML5, and CSS by<br />
+                NEAL EASTERLING <br />
+                level2learn.com<br />
+                <br />
+                ***<br />
+                <br />
+                Troll Face Image<br />
+                by Carlos Ramirez<br />
+                <br />
+                Lyrics by<br />
+                Rick Astley <br />
+                <br />
+                Sound effects by dermotte<br />
+                on freesound.org<br />    
+            </section>
+        </div>
+        
+        <script src="./scripts/constants.js" async defer></script>
+        <script src="./scripts/utils.js" async defer></script>
+        <script src="./scripts/Responder.js" async defer></script>
+        <script src="./scripts/Dice.js" async defer></script>
+        <script src="./scripts/TrollGameBoard.js" async defer></script>
+        <script src="./trollGame.js" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,294 @@
+:root{
+    --lg:#5be10b;
+    --dg:#194003;
+    --lb:#66ffff;
+    --db:#1a4040;
+    --yel:#e5c617;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+@font-face {
+font-family: OCR;
+src: url(./fonts/OCRAEXT.TTF);
+}
+@font-face {
+    font-family: Impact;
+    src: url(./fonts/impact.ttf);
+}
+body{
+    font-family: OCR;
+    background-color: #000;
+    overflow: hidden;
+}
+#canvasContainer{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+#gameCanvas{
+    position:absolute;
+    background-color: black;
+}
+button{
+    width: 25%;
+    height:2em;
+    font-family: OCR;
+    font-size: .75em;
+    margin: 3px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: var(--lb);
+    background-color: var(--db);
+    color: var(--lb);
+    transition-duration: 0.2s;
+}
+button:hover{
+    color: var(--db);
+    background-color: var(--lb);
+}
+/*==========  Start Screen ========================*/
+
+#startSection{
+    position: absolute;
+    top: 60%;
+    width: 200px;
+    height: 35px;
+}
+#startSection button{
+    height: 100%;
+    width: 100%;
+    border-color: var(--lg);
+    background-color: var(--dg);
+    color: var(--lg);
+}
+#startSection button:hover {
+    color: var(--dg);
+    background-color: var(--lg);
+}
+
+/* ====================  GameBoard ===================*/
+#actionContainer{
+    position: absolute;
+    top:50%;
+    width: 75%;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+}
+#trollContainer, #playerContainer{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    color: var(--lg);   
+}
+#playerContainer{
+    /* padding-top: 15px; */
+    color: var(--lb);
+}
+#trollTxtBox, #playerTxtBox{
+    width:90%;
+    font-size: 1em; 
+    min-height: 60px; 
+    white-space: pre-wrap;
+    border-radius: 15px;
+    border: 3px solid;
+    padding: 8px;
+    background-color: var(--dg);
+    color: var(--lg);
+    border-color: var(--lg);
+}
+#playerTxtBox{
+    background-color: var(--db);
+    color: var(--lb);
+    border-color: var(--lb);
+    margin-right: 0;
+    margin-left: auto;
+}
+#trollName, #playerName{
+    width: 95%;
+    font-size: 1.5em;
+    margin-top: 2%;
+    padding-bottom: 5px;
+}
+#playerName{
+    text-align: right;
+}
+#trollHP_Outer, #playerHP_Outer{
+    /* position: absolute; */
+    height: 25px;
+    width: 90%;
+    padding: 2px;
+    background-color: #333333;
+    border: 2px solid;
+    border-radius: 10px;
+    top: 65%;
+    left: 20%;
+    border-color: var(--lg);
+}
+#trollHP_Inner, #playerHP_Inner{
+    height:24px;
+    width: 50%;
+    border-radius: 7px;
+    background-color: var(--lg);
+    transition-duration: 0.2s;
+}
+#playerHP_Outer{
+    border-color: var(--lb);
+    margin-right: 2px;
+    margin-left:auto;
+}
+#playerHP_Inner{
+    float: right;
+    background-color: var(--lb);
+}
+
+#buttonContainer{
+    position:absolute;
+    bottom: 5%;
+    width: 75%;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    margin-left: 5%;
+    background-color: var(--db);
+    border: 3px solid;
+    border-color: var(--lb);
+    border-radius: 15px;
+}
+/* ====================  End Screen =========================*/
+
+#endScreen{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+#endRoll{
+    height: 40%;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 10%;
+    color: var(--lg);
+    text-align: center;
+    font-size: 1.2em;
+}
+#endMessage{
+    font-size: 3em;
+    color: #ffffff;
+    font-family: Impact;
+    text-align: center;
+    padding: 30px;
+}
+#endMessage span{
+    color: var(--lg);
+    font-size: 1.5em;
+}
+#endButtonContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#endButtonContainer button{
+    font-family: OCR;
+    width: 30%;
+    border-color: var(--lg);
+    background-color: var(--dg);
+    color: var(--lg);
+}
+#endButtonContainer button:hover{
+    color: var(--dg);
+    background-color: var(--lg);
+}
+
+/* =========== CREDITS ================*/
+#credits{
+    position: absolute;
+    display: none;
+    top:50%;
+    left:50%;
+    padding: 10%;
+    color: #fff;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+/*============== Media Breaks ======================= */
+@media only screen and (max-width: 600px){
+    *{
+        font-size: .75em;
+    }
+    button{
+        font-size: 2em;
+    }
+    #startSection button{
+        font-size: 3em;
+    }
+    #trollContainer, #playerContainer{
+        min-height: 100px;
+        margin-bottom: 35px;
+    }
+    #trollTxtBox, #playerTxtBox{
+        font-size: 3.5em;
+        min-height: 55px;
+    }
+    #trollName, #playerName{
+        font-size: 3em;
+    }
+    #trollHP_Outer, #playerHP_Outer{
+        height: 10px;
+    }
+    #trollHP_Inner, #playerHP_Inner{
+        height:9px;
+    }
+    #buttonContainer{
+        height: auto;
+        flex-direction: column;
+    }
+    #buttonContainer button{
+        width: 95%;
+        height: 30px;
+        font-size: 3em;
+    }
+    #endRoll{
+        height: 30%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 5%;
+        text-align: center;
+        font-size: 3em;
+    }
+    #endMessage{
+        font-size: 5em;
+        text-align: center;
+        padding: 30px;
+    }
+    #endMessage span{
+        color: var(--lg);
+        font-size: 1.5em;
+    }
+    #endButtonContainer{
+        flex-direction: column;
+    }
+    #endButtonContainer button{
+        width: 100%;
+        height:30px;
+        font-size: 3em;
+    }
+    #credits{
+        font-size: 3em;
+    }
+}
