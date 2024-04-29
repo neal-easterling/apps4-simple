@@ -4,10 +4,11 @@
     --clr-blue: #257FD2;
     --clr-white: #d9d9d9;
     --clr-dark: #222222;
-    --border: 1px solid var(--clr-white);
+    --border-white: 1px solid var(--clr-white);
+    --border-blue: 1px solid var(--clr-blue);
     --radius: 30px;
-    --shadow: 0 4px 4px rgba(37, 127, 210, 0.25)
-}
+    --shadow: 0 4px 4px rgba(37, 127, 210, 0.25);
+}   
 
 *{
     margin: 0;
@@ -15,36 +16,103 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     --padding: 10rem;
     position: relative;
-    color: var(--clr-white);
+    color: var(--clr-dark);
     padding-top: 80px;
     font-family: 'Poppins', sans-serif;
     background-color: var(--clr-blue);
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-.card {
+h1 {
+    font-size: 3.5rem;
+}
+
+h2{
+    font-size: 2.5rem;
+    color: var(--clr-blue);
+}
+h5 {
+    font-size: 1rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    h2{
+        max-width: 90%;
+    }
+
+    h3, h4 {
+        max-width: 300px;
+    }
+
+    img, p {
+        width: 90%;
+    }
+
+    p {
+        text-align: left;
+    }
+}
+
+.card{
     background-color: var(--clr-white);
-    border: var(--border);
+    border: var(--border-blue);
     border-radius: var(--radius);
     padding: 1rem;
     box-shadow: var(--shadow);
-    overflow: hidden;
+}
 
+.container > form {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+        font-weight: 500;
+    }
+
+    input, textarea, select{
+        min-height: 1.5rem;
+        border-radius: 0.75rem;
+        border: var(--border-blue);
+        padding: 0.5rem;
+        padding-left: 1rem;
+        max-width: 300px;
+        font-weight: 400;
+
+        &:focus{
+            border: var(--border-blue);
+            outline: var(--border-blue);
+        }
+    }
 }
 
 section{
-    margin-top: 3rem;
-    padding: 3rem var(--padding);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 300px;
+    grid-template-rows: 0.5fr 6fr;
     gap: 1rem;
     grid-template-areas: 
         "title title"
         "col1 col2";
+    margin-top: 10rem;
+    padding: 85px var(--padding) 100px;
+    min-height: 500px;
+    scroll-behavior: smooth;
 }
 
 section >.title{
@@ -59,6 +127,53 @@ section > .col2{
     grid-area: col2;
 }
 
+.color-blue{
+    color: var(--clr-blue);
+}
+
+section.blue{
+    background-color: var(--clr-blue);
+    border-top: var(--border-white);
+    border-bottom: var(--border-white);
+}
+
+section.blue h2{
+    color: var(--clr-white);
+}
+
+section.white{
+    background-color: var(--clr-white);
+    border-top: var(--border-blue);
+    border-bottom: var(--border-blue);
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.main-btn{
+    width: 300px;
+    margin: 0.5rem;
+    height: calc(var(--radius)*2);
+    border-radius: var(--radius);
+    background-color: var(--clr-white);
+    color: var(--clr-dark);
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: var(--border-blue);
+    box-shadow: var(--shadow);
+    transition: all 300ms ease;
+}
+
+.main-btn:hover{
+    background-color: var(--clr-blue);
+    color: var(--clr-white);
+    border: var(--border-white);
+}
+
 /* ====== Header Classes ===== */
 .main-header{
     position: fixed;
@@ -69,6 +184,7 @@ section > .col2{
     display: flex;
     justify-content: space-between;
     height: 75px;
+    color: var(--clr-white);
     background-color: var(--clr-blue);
     border-bottom: 1px solid var(--clr-white);
     padding: 1rem var(--padding);
@@ -81,6 +197,7 @@ section > .col2{
 
 .header-title{
     font-weight: 400;
+    font-size: 2rem;
 }
 
 .menu-container{
@@ -96,12 +213,13 @@ section > .col2{
 
 .main-menu{
     --scaleY: 0;
-    border: var(--border);
+    border: var(--border-blue);
     border-radius: 0 0 var(--radius) var(--radius);
     margin-top: 1rem;
     transform: scaleY(var(--scaleY));
     transition: transform 300ms ease;
     transform-origin: top center;
+    scroll-behavior: smooth;
 }
 
 .main-menu.active{
@@ -125,6 +243,7 @@ section > .col2{
 .background-logo{
     position: fixed;
     z-index: -2;
+    top: -3rem;
     width: 105%;
     left: 1rem;
 }
@@ -132,6 +251,8 @@ section > .col2{
 /* ====== Hero-splash ===== */
 section.hero-splash{
     position: relative;
+    height: 650px;
+    margin-top: 0;
     margin-bottom: 10rem;
 }
 
@@ -168,9 +289,27 @@ section.hero-splash::before{
     position: absolute;
     z-index: 3;
     left: var(--padding);
-    bottom: 35%;
+    bottom: 50%;
     color: var(--clr-dark);
     font-size: 3.3rem;
     line-height: 3rem;
     -webkit-text-stroke: 2px var(--clr-white);
 }
+
+/* ===== Join section ===== */
+.long-title{
+    font-size: 2rem;
+    margin-left: 3rem;
+}
+
+.main-footer{
+    margin-top: 10rem;
+    height: 125px;
+    background-color: var(--clr-white);
+    border-top: var(--border-blue);
+}
+
+#top, #mission, #apps, #donate, #join{
+    scroll-behavior: smooth;
+}
+
