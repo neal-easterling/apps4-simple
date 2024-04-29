@@ -10,36 +10,37 @@
 </head>
 <body>
     <header class="main-header">
-        <img src="./assets/appslogo.svg" alt="Apps4Everyone Logo">
+        <img class="nav-logo" src="./assets/appslogo.svg" alt="Apps4Everyone Logo">
         <h1 class="header-title">Apps4Everyone.tech</h1>
-        <div id="main-menu-btn" class="main-menu-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-              </svg>
-        </div>
-        <div id="menu-container">
-            <ul>
-                <li><a href="#top">Home</a></li>
-                <li><a href="#mission">Our Mission</a></li>
-                <li><a href="#apps">Our Apps</a></li>
-                <li><a href="#donate">Donate</a></li>
-                <li><a href="#join">Join Our Team</a></li>
+        
+        <div class="menu-container">
+            <div id="main-menu-btn" class="main-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+            </div>
+            <ul id="main-menu" class="card main-menu">
+                <li><a href="#top" class="menu-link">Home</a></li>
+                <li><a href="#mission" class="menu-link">Our Mission</a></li>
+                <li><a href="#apps" class="menu-link">Our Apps</a></li>
+                <li><a href="#donate" class="menu-link">Donate</a></li>
+                <li><a href="#join" class="menu-link">Join Our Team</a></li>
             </ul>
         </div>
     </header>
-    <div class="background-circle"></div>
     <img src="./assets/appslogo.svg" alt="apps logo in the background" class="background-logo">
     <section id="top" class="section hero-splash">
-        <H1>Empower Education<br /> Inspire Innovation</H1>
-        <img src="./assets/photo-pie-chart.png" alt="A child in headphones, a woman at a computer, three women in a fun meeting" />
+        <img src="./assets/appslogo.svg" alt="Apps4Everone logo" class="splash-logo">
+        <H1 class="splash-title">Empower Education<br /> Inspire Innovation</H1>
+        <img src="./assets/photo-pie-chart.png" alt="A child in headphones, a woman at a computer, three women in a fun meeting" class="splash-pie-img" />
     </section>
     <section id="mission" class="section mission-section">
-        <div class="card">
+        <div class="card col1">
             <h3>Our Mission</h3>
             <p>In the wake of the pandemic, the urgent demand for educational technology skyrocketed. Yet, for many classrooms and small businesses, access to these vital tools remains a distant dream. Apps4Everyone emerged from the realization that bridging this gap is not just necessary, but critical for the future of learning and entrepreneurship.</p>
             <p>As funding dwindles and the technology race charges ahead, underfunded classrooms and budding entrepreneurs are left behind. That's where we step in. We're on a mission to close the divide by providing well-constructed, affordable applications that empower educators, small business owners, and ambitious individuals alike.</p>
         </div>
-        <div class="card-container">
+        <div class="card-container col2">
             <a href="# apps" class="btn main-btn"> Our Apps</a>
             <a href="#request" class="btn main-btn"> Request App</a>
             <a href="#donate" class="btn main-btn"> Donate</a>
@@ -47,14 +48,14 @@
         </div>
     </section>
     <section id="apps" class="section apps-section">
-        <h2>Our Apps</h2>
-        <div class="card">
+        <h2 class="title">Our Apps</h2>
+        <div class="card col1">
             <img src="./assets/every-cam-logo.svg" alt="Every Cam Logo" >
             <p>All-in-one Online Screen Share, Webcam, Document Camera, Whiteboarding, Streaming, Capture and Video Recorder.</p>
             <p>Free with minimal advertising. No watermarks.</p>
             <a href="https://apps4everyone.tech/everycam/" class="btn main-btn">Go to App</a>
         </div>
-        <div class="card">
+        <div class="card col2">
             <img src="./assets/every-edit-logo.svg" alt="Every Cam Logo" >
             <p>All-in-one Video and Sound editing app for Streaming Video, Social Media, and Podcasting platforms.</p>
             <p>In development planning.<br />Hopeful release 2025.</p>
@@ -62,12 +63,12 @@
         </div>
     </section>
     <section id="request" class="section request-section">
-        <h2>Request App</h2>
-        <div class="card">
+        <h2 class="title">Request App</h2>
+        <div class="card col1">
             <p>We believe in fostering a community where everyone's voice is heard and needs are met. Whether you're a teacher seeking innovative classroom solutions, an entrepreneur striving to grow your business, or an individual eager to learn and create, Apps4Everyone is here for you.</p>
             <p>Tell us your needs, and we'll strive to fulfill them. While we may not be able to meet every request immediately, we're dedicated to finding solutions that make a difference. Your input drives our innovation.</p>
         </div>
-        <div class="card">
+        <div class="card col2">
             <form action="mailto:admin@apps4everyone.tech">
                 <label for="email">Your Email</label>
                 <input type="text" name="email" placeholder="abc@domain.com">
@@ -78,22 +79,22 @@
         </div>
     </section>
     <section id="donate" class="section donate-section">
-        <div class="card-container">
+        <div class="card-container col1">
             <h2>Donate</h2>
             <a href="https://patreon.com/Apps4Everyone" class="btn main-btn">Donate with Patreon</a>
         </div>
-        <div class="card-container">
+        <div class="card-container col2">
             <h4>Apps4Everyone operates on the generosity of donors and the support of our community. Together, we can expand our reach and empower more individuals to thrive in an ever-evolving world</h4>
         </div>
     </section>
     <section id="join" class="section join-section">
-        <div class="card">
+        <div class="card col1">
             <h5>Social Media Support</h5>
             <p>As a Social Media partner, you will get early access to apps and beta uses.  You will also be part of shaping the direction of app features along with influencing which apps to develop next.</p>
             <h5>Development Support</h5>
             <p>If you are a javascript developer with front or back-end experience, consider becoming a development partner.  You will receive a share in any revenue produced by the apps you work on based on your contribution to the project.</p>
         </div>
-        <div class="card-container">
+        <div class="card-container col2">
             <h2>Join our passionate team of developers <br />and influencers in making a difference.</h2>
             <div class="card">
                 <form action="mailto:admin@apps4everyone.tech">
