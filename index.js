@@ -4,7 +4,7 @@ window.onload = ()=>{
   const menu = document.getElementById('main-menu');
 
   menuBtn.addEventListener('click', ()=>{
-    console.log('btn clicked');
+    menuBtn.classList.toggle('active');
     menu.classList.toggle('active');
   });
 
