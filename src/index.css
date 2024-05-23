@@ -7,6 +7,7 @@
     --border-white: 1px solid var(--clr-white);
     --border-blue: 1px solid var(--clr-blue);
     --padding: 30px;
+    --button-radius: 15px;
     --radius: 30px;
     --shadow: 0 4px 4px rgba(37, 127, 210, 0.25);
 }
@@ -24,6 +25,7 @@ html{
 body{
     position: relative;
     color: var(--clr-dark);
+    padding-top: 70px;
     font-family: 'Poppins', sans-serif;
     background-color: var(--clr-blue);
 }
@@ -79,25 +81,89 @@ ul.main-menu.active{
     --scale: 1;
 }
 
-section{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.5fr 6fr;
-  gap: 1rem;
-  grid-template-areas: 
-      "title title"
-      "col1 col2";
-  margin-top: 10rem;
-  padding: 85px var(--padding) 100px;
-  min-height: 550px;
+.menu-button{
+    --rotation: 0deg;
+    transform: rotate(var(--rotation));
+    transition: all 300ms ease;
+}
+.menu-button.active{
+    --rotation: -90deg;
+}
 
-  @media only screen  and (max-width: 950px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: 0.5fr 6fr 6fr;
-      grid-template-areas: 
-      "title"
-      "col1"
-      "col2";
-  }
-  
+footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        gap: 20px;
+        padding: var(--padding);
+        background-color: var(--clr-dark);
+        color: var(--clr-white);
+
+        .donation-container{
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+
+            p{
+                 max-width: 725px; 
+            }
+        }
+}
+
+.btn{
+    --scale: 1;
+    transform: scale(var(--scale));
+    transition: all 300ms ease;
+}
+
+.btn:hover{
+    --scale: 1.2;
+}
+
+.text-btn{
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--clr-white);
+    background-color: var(--clr-blue);
+    border-radius: var(--button-radius);
+    border: 1px solid var(--clr-white);
+    padding: 15px;
+    transition: all 300ms;
+}
+
+.text-btn:hover{
+    color: var(--clr-blue);
+    background-color: var(--clr-white);
+    border-color: var(--clr-blue);
+}
+
+.socials-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+section{
+    height: 80vh;
+    display: grid;
+    place-items: center;
+}
+
+#hero-section{
+    background-image: url('https://apps4everyone.tech/assets/photo-pie-chart.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-text{
+    font-size: 3em;
 }
